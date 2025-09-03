@@ -1,3 +1,5 @@
+import 'package:details/Screen/about.dart';
+import 'package:details/Screen/contacts.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,9 +20,17 @@ class HomePage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {}, child: Text('About Me')),
+                ElevatedButton(onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
+                    return AboutPage();
+                  }),);
+                }, child: Text('About Me')),
                 SizedBox(width: 30,),
-                ElevatedButton(onPressed: (){}, child: Text("Contacts"))
+                ElevatedButton(onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx){
+                    return ContactPage();
+                  }));
+                }, child: Text("Contacts"))
               ],
             ),
           ],
